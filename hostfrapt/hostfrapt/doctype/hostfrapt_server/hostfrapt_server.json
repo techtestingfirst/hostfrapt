@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-28 00:59:57.871870",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "server_settings_section",
+  "is_enabled",
+  "server_name",
+  "hostname",
+  "column_break_ddet",
+  "ip",
+  "assigned_ip_addresses",
+  "section_break_hulf",
+  "name_server_1",
+  "name_server_3",
+  "column_break_zlrn",
+  "name_server_2",
+  "name_server_4",
+  "section_break_kvgw",
+  "server_panel",
+  "username",
+  "password_or_login_key",
+  "use_secure_connection",
+  "column_break_rmer",
+  "connection_port",
+  "password_length",
+  "server_provider",
+  "server_location"
+ ],
+ "fields": [
+  {
+   "fieldname": "server_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Server Name",
+   "placeholder": "Unique Name to Identify Server",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_enabled",
+   "fieldtype": "Check",
+   "label": "Is Enabled?"
+  },
+  {
+   "fieldname": "hostname",
+   "fieldtype": "Data",
+   "label": "Hostname",
+   "placeholder": "server1.yourserver.com",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ddet",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ip",
+   "fieldtype": "Data",
+   "label": "IP",
+   "placeholder": "Primary IP Address of  the Server to connect it.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_ip_addresses",
+   "fieldtype": "Data",
+   "label": "Assigned IP Addresses"
+  },
+  {
+   "fieldname": "section_break_hulf",
+   "fieldtype": "Section Break",
+   "label": "Name Server Settings"
+  },
+  {
+   "fieldname": "name_server_1",
+   "fieldtype": "Data",
+   "label": "Name Server 1",
+   "placeholder": "ns1.yourdomain.com",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_server_2",
+   "fieldtype": "Data",
+   "label": "Name Server 2",
+   "placeholder": "ns2.yourdomain.com",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_server_3",
+   "fieldtype": "Data",
+   "label": "Name Server 3",
+   "placeholder": "ns3.yourdomain.com"
+  },
+  {
+   "fieldname": "name_server_4",
+   "fieldtype": "Data",
+   "label": "Name Server 4",
+   "placeholder": "ns4.yourdomain.com"
+  },
+  {
+   "fieldname": "column_break_zlrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kvgw",
+   "fieldtype": "Section Break",
+   "label": "Control Penal Settings"
+  },
+  {
+   "fieldname": "server_panel",
+   "fieldtype": "Select",
+   "label": "Server Panel",
+   "options": "\nDirect Admin\nC Panel\nPlesk\nCWP",
+   "placeholder": "Select the Panel from drop down",
+   "reqd": 1
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username",
+   "placeholder": "UserName used to connect to server",
+   "reqd": 1
+  },
+  {
+   "fieldname": "password_or_login_key",
+   "fieldtype": "Data",
+   "label": "Password or Login Key",
+   "placeholder": "Password or Login Key used to connect to server",
+   "reqd": 1
+  },
+  {
+   "fieldname": "connection_port",
+   "fieldtype": "Data",
+   "label": "Connection Port",
+   "placeholder": "Custom port used to connect to API",
+   "reqd": 1
+  },
+  {
+   "fieldname": "password_length",
+   "fieldtype": "Int",
+   "label": "Password Length",
+   "placeholder": "Length of Password for creating new user. Default is 10"
+  },
+  {
+   "fieldname": "column_break_rmer",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_secure_connection",
+   "fieldtype": "Check",
+   "label": "Use Secure Connection?"
+  },
+  {
+   "fieldname": "server_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Server Settings"
+  },
+  {
+   "description": "eg. Hetzner, Contabo etc.",
+   "fieldname": "server_provider",
+   "fieldtype": "Data",
+   "label": "Server Provider"
+  },
+  {
+   "description": "eg. US, Canada etc",
+   "fieldname": "server_location",
+   "fieldtype": "Link",
+   "label": "Server Location",
+   "options": "Country"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-02 18:31:14.341759",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Server",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "server_name",
+ "track_changes": 1
+}

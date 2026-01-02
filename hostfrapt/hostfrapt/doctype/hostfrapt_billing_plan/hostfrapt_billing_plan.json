@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:title_code",
+ "creation": "2026-01-02 19:40:35.715304",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "section_break_xlov",
+  "title_code",
+  "title",
+  "column_break_tiku",
+  "price_type",
+  "section_break_xhhv",
+  "currency",
+  "term_period",
+  "trial_days",
+  "column_break_flii",
+  "price"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tiku",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "price_type",
+   "fieldtype": "Select",
+   "label": "Price Type",
+   "options": "\nFree\nTrial\nOne Time\nRecurring",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_xhhv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "description": "If Price Type is Free leave it Zero.",
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_flii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xlov",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "INR",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "depends_on": "eval:doc.price_type == \"Recurring\"",
+   "fieldname": "term_period",
+   "fieldtype": "Data",
+   "label": "Term Period",
+   "mandatory_depends_on": "eval:doc.price_type == \"Recurring\""
+  },
+  {
+   "depends_on": "eval:doc.price_type == \"Trial\"",
+   "fieldname": "trial_days",
+   "fieldtype": "Data",
+   "label": "Trial Days",
+   "mandatory_depends_on": "eval:doc.price_type == \"Trial\""
+  },
+  {
+   "fieldname": "title_code",
+   "fieldtype": "Data",
+   "label": "Title Code",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-02 21:55:56.810624",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Billing Plan",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "title_code,title, currency, price, price_type",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}
