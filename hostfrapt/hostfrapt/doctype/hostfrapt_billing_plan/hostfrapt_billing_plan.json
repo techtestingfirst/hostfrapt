@@ -55,6 +55,7 @@
    "fieldname": "price",
    "fieldtype": "Currency",
    "label": "Price",
+   "non_negative": 1,
    "options": "currency",
    "reqd": 1
   },
@@ -98,7 +99,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-02 21:55:56.810624",
+ "modified": "2026-01-03 22:04:53.640967",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Billing Plan",
