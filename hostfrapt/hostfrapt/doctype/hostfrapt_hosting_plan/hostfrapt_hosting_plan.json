@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:plan_code",
+ "autoname": "autoincrement",
  "creation": "2025-12-29 19:26:01.297295",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "plan_code",
   "plan_name",
+  "plan_discription",
   "section_break_kdiz",
   "billing_plan"
  ],
@@ -29,25 +29,23 @@
    "reqd": 1
   },
   {
-   "fieldname": "plan_code",
-   "fieldtype": "Data",
-   "label": "Plan Code",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "section_break_kdiz",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "plan_discription",
+   "fieldtype": "Text Editor",
+   "label": "Plan Discription"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-02 22:37:04.659952",
+ "modified": "2026-01-25 23:09:49.961251",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Hosting Plan",
- "naming_rule": "By fieldname",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -65,7 +63,8 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "search_fields": "plan_code,plan_name",
+ "search_fields": "plan_name",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

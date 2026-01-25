@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2026-01-02 22:17:14.833705",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,7 +9,11 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_xlov",
-  "title"
+  "title",
+  "billing_type",
+  "currency",
+  "price",
+  "term_period"
  ],
  "fields": [
   {
@@ -23,16 +28,45 @@
    "label": "Title",
    "options": "Hostfrapt Billing Plan",
    "reqd": 1
+  },
+  {
+   "fetch_from": "title.billing_type",
+   "fieldname": "billing_type",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Billing Type"
+  },
+  {
+   "fetch_from": "title.currency",
+   "fieldname": "currency",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Currency"
+  },
+  {
+   "fetch_from": "title.price",
+   "fieldname": "price",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fetch_from": "title.term_period",
+   "fieldname": "term_period",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Term Period"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-01-02 22:40:10.815220",
+ "modified": "2026-01-25 19:52:41.161772",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Billing Plan Detail",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

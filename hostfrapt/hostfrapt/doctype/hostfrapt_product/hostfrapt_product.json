@@ -1,12 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:title_code",
+ "autoname": "autoincrement",
  "creation": "2025-12-29 21:26:12.872450",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "enabled",
+  "server_allocation",
   "column_break_tpqo",
   "hidden",
   "section_break_kczf",
@@ -14,13 +15,12 @@
   "activation",
   "hosting_plan",
   "column_break_gqkc",
-  "title_code",
   "title",
   "route",
   "section_break_cvqg",
   "enable_stock",
-  "column_break_rsgl",
-  "quantity_in_stock"
+  "quantity_in_stock",
+  "column_break_rsgl"
  ],
  "fields": [
   {
@@ -103,21 +103,22 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "title_code",
-   "fieldtype": "Data",
-   "label": "Title Code",
-   "reqd": 1,
-   "unique": 1
+   "depends_on": "eval: doc.enabled == 1",
+   "fieldname": "server_allocation",
+   "fieldtype": "Link",
+   "label": "Server Allocation",
+   "mandatory_depends_on": "eval: doc.enabled == 1",
+   "options": "Hostfrapt Server"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-03 22:02:07.849017",
+ "modified": "2026-01-25 22:28:01.092538",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Product",
- "naming_rule": "By fieldname",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -135,7 +136,8 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "search_fields": "title_code, title",
+ "search_fields": "title,hosting_plan",
+ "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

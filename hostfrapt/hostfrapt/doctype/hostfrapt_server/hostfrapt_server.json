@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "autoincrement",
  "creation": "2025-12-28 00:59:57.871870",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -175,10 +176,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-02 18:31:14.341759",
+ "modified": "2026-01-25 19:48:53.736545",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Server",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -196,6 +198,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "server_provider,server_panel,server_location",
  "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
