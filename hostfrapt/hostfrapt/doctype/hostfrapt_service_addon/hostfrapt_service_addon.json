@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-11 19:08:44.894053",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "addon_name",
+  "applicable_to_products",
+  "provisioning_required",
+  "column_break_whhf",
+  "addon_type",
+  "provisioning_module",
+  "section_break_anih",
+  "pricing"
+ ],
+ "fields": [
+  {
+   "fieldname": "addon_name",
+   "fieldtype": "Data",
+   "label": "Addon Name",
+   "placeholder": "Extra Bandwidth, Dedicated IP, etc."
+  },
+  {
+   "fieldname": "addon_type",
+   "fieldtype": "Select",
+   "label": "Addon Type",
+   "options": "Disk Space\nBandwidth\nIP Address\nSSL\nBackup"
+  },
+  {
+   "fieldname": "applicable_to_products",
+   "fieldtype": "Link",
+   "label": "Applicable To Products",
+   "options": "Hostfrapt Product"
+  },
+  {
+   "fieldname": "section_break_anih",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pricing",
+   "fieldtype": "Table",
+   "label": "Pricing",
+   "options": "Hostfrapt Pricing Table"
+  },
+  {
+   "default": "0",
+   "fieldname": "provisioning_required",
+   "fieldtype": "Check",
+   "label": "Provisioning Required"
+  },
+  {
+   "fieldname": "provisioning_module",
+   "fieldtype": "Data",
+   "label": "Provisioning Module"
+  },
+  {
+   "fieldname": "column_break_whhf",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-11 19:27:12.040181",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Service Addon",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

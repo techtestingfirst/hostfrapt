@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-10 10:13:05.024482",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "service_id",
+  "section_break_nvsz",
+  "customer",
+  "recurring_amount",
+  "server",
+  "registration_date",
+  "service_status",
+  "column_break_bwmc",
+  "order",
+  "product",
+  "billing_cycle",
+  "domain_name",
+  "next_due_date",
+  "section_break_ktwk",
+  "username",
+  "dedicated_ip",
+  "column_break_njmu",
+  "password",
+  "control_panel_login_url",
+  "section_break_yzhi",
+  "auto_suspend",
+  "termination_date",
+  "column_break_xttq",
+  "suspension_reason",
+  "section_break_dzph",
+  "service_metadata"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_id",
+   "fieldtype": "Data",
+   "label": "Service ID"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "User"
+  },
+  {
+   "fieldname": "order",
+   "fieldtype": "Link",
+   "label": "Order",
+   "options": "Hostfrapt Order"
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "label": "Product",
+   "options": "Hostfrapt Product"
+  },
+  {
+   "fieldname": "server",
+   "fieldtype": "Link",
+   "label": "Server",
+   "options": "Hostfrapt Server"
+  },
+  {
+   "fieldname": "domain_name",
+   "fieldtype": "Data",
+   "label": "Domain Name"
+  },
+  {
+   "description": "Control panel username",
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username"
+  },
+  {
+   "description": "encrypted, for control panel",
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "service_status",
+   "fieldtype": "Select",
+   "label": "Service Status",
+   "options": "Pending\nActive\nSuspended\nTerminated\nCancelled"
+  },
+  {
+   "fetch_from": "order.order_date",
+   "fieldname": "registration_date",
+   "fieldtype": "Link",
+   "label": "Registration Date",
+   "options": "Hostfrapt Order"
+  },
+  {
+   "fetch_from": "order.next_due_date",
+   "fieldname": "next_due_date",
+   "fieldtype": "Date",
+   "label": "Next Due Date",
+   "options": "Hostfrapt Order Items"
+  },
+  {
+   "fieldname": "column_break_bwmc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billing_cycle",
+   "fieldtype": "Link",
+   "label": "Billing Cycle",
+   "options": "Hostfrapt Pricing Table"
+  },
+  {
+   "fetch_from": "billing_cycle.recurring_price",
+   "fieldname": "recurring_amount",
+   "fieldtype": "Currency",
+   "label": "Recurring Amount"
+  },
+  {
+   "fieldname": "dedicated_ip",
+   "fieldtype": "Data",
+   "label": "Dedicated IP"
+  },
+  {
+   "fieldname": "control_panel_login_url",
+   "fieldtype": "Data",
+   "label": "Control Panel Login URL"
+  },
+  {
+   "fieldname": "section_break_dzph",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_metadata",
+   "fieldtype": "JSON",
+   "label": "Service Metadata"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_suspend",
+   "fieldtype": "Check",
+   "label": "Auto Suspend"
+  },
+  {
+   "depends_on": "eval:doc.auto_suspend==1",
+   "fieldname": "suspension_reason",
+   "fieldtype": "Small Text",
+   "label": "Suspension Reason"
+  },
+  {
+   "fieldname": "termination_date",
+   "fieldtype": "Date",
+   "label": "Termination Date"
+  },
+  {
+   "fieldname": "section_break_yzhi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xttq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ktwk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_njmu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_nvsz",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-10 10:48:07.155814",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Service",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

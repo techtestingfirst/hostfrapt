@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-10 11:10:02.447598",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "invoice_number",
+  "invoice_status",
+  "payment_method",
+  "column_break_fuug",
+  "invoice_date",
+  "due_date",
+  "customer",
+  "section_break_liut",
+  "invoice_items",
+  "section_break_btaj",
+  "subtotal",
+  "amount_paid",
+  "payment_date",
+  "column_break_azrc",
+  "tax_amount",
+  "balance_due",
+  "late_fee_applied",
+  "section_break_vicp",
+  "notes",
+  "section_break_luta",
+  "send_email",
+  "column_break_ojzh",
+  "payment_link"
+ ],
+ "fields": [
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "label": "Invoice Number"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "User"
+  },
+  {
+   "default": "Today",
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "invoice_status",
+   "fieldtype": "Select",
+   "label": "Invoice Status",
+   "options": "Draft\nUnpaid\nPaid\nCancelled\nRefunded\nPartially Paid"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Data",
+   "label": "Payment Method"
+  },
+  {
+   "fieldname": "column_break_fuug",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_liut",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoice_items",
+   "fieldtype": "Table",
+   "label": "Invoice Items",
+   "options": "Hostfrapt Invoice Item"
+  },
+  {
+   "fieldname": "section_break_btaj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "non_negative": 1,
+   "options": "Currency"
+  },
+  {
+   "fieldname": "tax_amount",
+   "fieldtype": "Currency",
+   "label": "Tax Amount",
+   "non_negative": 1,
+   "options": "Currency"
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid",
+   "non_negative": 1,
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_azrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "balance_due",
+   "fieldtype": "Currency",
+   "label": "Balance Due",
+   "non_negative": 1,
+   "options": "Currency"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "late_fee_applied",
+   "fieldtype": "Currency",
+   "label": "Late Fee Applied"
+  },
+  {
+   "fieldname": "section_break_vicp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "button_color": "Primary",
+   "fieldname": "send_email",
+   "fieldtype": "Button",
+   "label": "Send Email"
+  },
+  {
+   "fieldname": "payment_link",
+   "fieldtype": "Data",
+   "label": "Payment Link"
+  },
+  {
+   "fieldname": "section_break_luta",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ojzh",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-10 11:44:21.583718",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

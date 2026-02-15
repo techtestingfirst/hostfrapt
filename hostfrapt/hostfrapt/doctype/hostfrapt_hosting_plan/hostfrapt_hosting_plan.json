@@ -1,51 +1,131 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "autoincrement",
  "creation": "2025-12-29 19:26:01.297295",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "plan_name",
-  "plan_discription",
-  "section_break_kdiz",
-  "billing_plan"
+  "column_break_dobl",
+  "server_manager",
+  "section_break_jcll",
+  "disk_quota",
+  "bandwidth_quota",
+  "max_email_accounts",
+  "max_databases",
+  "column_break_vcxh",
+  "max_subdomains",
+  "max_addon_domains",
+  "max_parked_domains",
+  "ftp_accounts",
+  "ssh_access"
  ],
  "fields": [
   {
-   "description": "eg. Basic, Gold etc Plan name must be same as in control penal",
+   "description": "Must match control panel package name",
    "fieldname": "plan_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Plan Name",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "fieldname": "billing_plan",
-   "fieldtype": "Table",
-   "label": "Billing Plan",
-   "options": "Hostfrapt Billing Plan Detail",
    "reqd": 1
   },
   {
-   "fieldname": "section_break_kdiz",
+   "fieldname": "server_manager",
+   "fieldtype": "Select",
+   "label": "Server Manager",
+   "options": "\ncPanel\nDirectAdmin\nProxmox\nCustom",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dobl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jcll",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "plan_discription",
-   "fieldtype": "Text Editor",
-   "label": "Plan Discription"
+   "default": "0",
+   "description": "In MB. For Unlimited Make it Zero",
+   "fieldname": "disk_quota",
+   "fieldtype": "Float",
+   "label": "Disk Quota",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "In MB, For Unlimited Make it Zero",
+   "fieldname": "bandwidth_quota",
+   "fieldtype": "Float",
+   "label": "Bandwidth Quota",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "For Unlimited Make it Zero",
+   "fieldname": "max_email_accounts",
+   "fieldtype": "Int",
+   "label": "Max Email Accounts",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "For Unlimited Make it Zero",
+   "fieldname": "max_databases",
+   "fieldtype": "Int",
+   "label": "Max Databases",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "For Unlimited Make it Zero",
+   "fieldname": "max_subdomains",
+   "fieldtype": "Int",
+   "label": "Max Subdomains",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "For Unlimited Make it Zero",
+   "fieldname": "max_addon_domains",
+   "fieldtype": "Int",
+   "label": "Max Addon Domains",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "For Unlimited Make it Zero",
+   "fieldname": "max_parked_domains",
+   "fieldtype": "Int",
+   "label": "Max Parked Domains",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "For Unlimited Make it Zero",
+   "fieldname": "ftp_accounts",
+   "fieldtype": "Int",
+   "label": "FTP Accounts",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ssh_access",
+   "fieldtype": "Check",
+   "label": "SSH Access"
+  },
+  {
+   "fieldname": "column_break_vcxh",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-25 23:09:49.961251",
+ "modified": "2026-02-15 10:55:37.642521",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Hosting Plan",
- "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {

@@ -13,18 +13,30 @@ class HostfraptProduct(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+		from hostfrapt.hostfrapt.doctype.hostfrapt_pricing_table.hostfrapt_pricing_table import HostfraptPricingTable
 
-		activation: DF.Literal["After order is placed", "After payment is received", "Manual activation"]
-		enable_stock: DF.Check
-		enabled: DF.Check
-		hidden: DF.Check
-		hosting_plan: DF.Link
-		name: DF.Int | None
-		product_type: DF.Literal["Hosting", "Domain", "License", "Downloadable"]
+		allocation_server: DF.Link | None
+		auto_setup: DF.Check
+		description: DF.Text | None
+		pricing_table: DF.Table[HostfraptPricingTable]
+		product_name: DF.Data
+		product_type: DF.Literal["", "Shared Hosting", "VPS", "Dedicated", "Cloud", "Domain", "SSL", "Addon"]
 		quantity_in_stock: DF.Int
-		route: DF.Data | None
-		server_allocation: DF.Link | None
-		title: DF.Data
+		resource_limits: DF.Link | None
+		server_manager_type: DF.ReadOnly | None
+		stock_control: DF.Check
 	# end: auto-generated types
 
-	pass
+	def validate(self):
+		self.set_total()
+
+	# set the total price for each row in the pricing table
+	def set_total(self):
+		for row in self.pricing_table:
+			if not row.setup_fee:
+				row.total = row.price
+			else:
+				row.total = row.price + row.setup_fee
+	
+	
+	

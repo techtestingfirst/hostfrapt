@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-10 10:54:07.279354",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "domain_name",
+  "domain_status",
+  "registrar",
+  "years_registered",
+  "whois_privacy_enabled",
+  "column_break_cgoi",
+  "customer",
+  "registration_date",
+  "expiry_date",
+  "epp_code",
+  "auto_renew",
+  "section_break_vhct",
+  "nameservers"
+ ],
+ "fields": [
+  {
+   "fieldname": "domain_name",
+   "fieldtype": "Data",
+   "label": "Domain Name"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "User"
+  },
+  {
+   "fieldname": "registrar",
+   "fieldtype": "Data",
+   "label": "Registrar"
+  },
+  {
+   "fieldname": "domain_status",
+   "fieldtype": "Select",
+   "label": "Domain Status",
+   "options": "Active\nPending\nTransfer\nExpired\nLocked"
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_renew",
+   "fieldtype": "Check",
+   "label": "Auto Renew"
+  },
+  {
+   "fieldname": "years_registered",
+   "fieldtype": "Int",
+   "label": "Years Registered"
+  },
+  {
+   "fieldname": "section_break_vhct",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nameservers",
+   "fieldtype": "Table",
+   "label": "Nameservers",
+   "options": "Hostfrapt Nameserver"
+  },
+  {
+   "default": "0",
+   "fieldname": "whois_privacy_enabled",
+   "fieldtype": "Check",
+   "label": "WHOIS Privacy Enabled"
+  },
+  {
+   "fieldname": "epp_code",
+   "fieldtype": "Data",
+   "label": "EPP Code"
+  },
+  {
+   "fieldname": "column_break_cgoi",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-10 11:08:42.108877",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Domain",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

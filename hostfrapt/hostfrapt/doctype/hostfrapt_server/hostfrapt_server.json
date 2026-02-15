@@ -20,15 +20,19 @@
   "name_server_2",
   "name_server_4",
   "section_break_kvgw",
-  "server_panel",
+  "server_manager",
   "username",
   "password_or_login_key",
   "use_secure_connection",
+  "max_accounts",
+  "current_accounts_count",
   "column_break_rmer",
   "connection_port",
   "password_length",
   "server_provider",
-  "server_location"
+  "server_location",
+  "monthly_cost",
+  "currency"
  ],
  "fields": [
   {
@@ -110,14 +114,6 @@
    "label": "Control Penal Settings"
   },
   {
-   "fieldname": "server_panel",
-   "fieldtype": "Select",
-   "label": "Server Panel",
-   "options": "\nDirect Admin\nC Panel\nPlesk\nCWP",
-   "placeholder": "Select the Panel from drop down",
-   "reqd": 1
-  },
-  {
    "fieldname": "username",
    "fieldtype": "Data",
    "label": "Username",
@@ -171,12 +167,48 @@
    "fieldtype": "Link",
    "label": "Server Location",
    "options": "Country"
+  },
+  {
+   "fieldname": "server_manager",
+   "fieldtype": "Select",
+   "label": "Server Manager",
+   "options": "\nDirect Admin\nC Panel\nPlesk\nCWP\nProxmox\nCustom",
+   "placeholder": "Select the Panel from drop down",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "description": "For Unlimited Make it Zero",
+   "fieldname": "max_accounts",
+   "fieldtype": "Int",
+   "label": "Max Accounts",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "current_accounts_count",
+   "fieldtype": "Int",
+   "label": "Current Accounts Count",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "monthly_cost",
+   "fieldtype": "Currency",
+   "label": "Monthly Cost",
+   "non_negative": 1,
+   "options": "Currency"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-25 19:48:53.736545",
+ "modified": "2026-02-08 01:57:14.997562",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Server",
@@ -198,7 +230,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "search_fields": "server_provider,server_panel,server_location",
+ "search_fields": "server_provider,server_manager,server_location",
  "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",

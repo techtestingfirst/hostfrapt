@@ -13,9 +13,9 @@ IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
 
-class IntegrationTestHostfraptUser(IntegrationTestCase):
+class IntegrationTestHostfraptServiceAddonInstance(IntegrationTestCase):
 	"""
-	Integration tests for HostfraptUser.
+	Integration tests for HostfraptServiceAddonInstance.
 	Use this class for testing interactions between multiple components.
 	"""
 

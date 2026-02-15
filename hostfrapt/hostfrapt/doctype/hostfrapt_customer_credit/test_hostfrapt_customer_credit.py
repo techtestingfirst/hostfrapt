@@ -13,9 +13,9 @@ IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
 
-class IntegrationTestHostfraptTermPeriod(IntegrationTestCase):
+class IntegrationTestHostfraptCustomerCredit(IntegrationTestCase):
 	"""
-	Integration tests for HostfraptTermPeriod.
+	Integration tests for HostfraptCustomerCredit.
 	Use this class for testing interactions between multiple components.
 	"""
 

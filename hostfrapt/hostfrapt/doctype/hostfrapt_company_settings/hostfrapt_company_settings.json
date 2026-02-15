@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-11 22:14:51.100345",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company_name",
+  "email",
+  "address_details",
+  "invoice_prefix",
+  "default_currency",
+  "late_fee_settings",
+  "late_fee_type",
+  "late_fee_after_days",
+  "late_fee_amount",
+  "column_break_nxtm",
+  "company_logo",
+  "phone",
+  "tax_id",
+  "invoice_number_series",
+  "default_tax_template",
+  "auto_suspension",
+  "suspension_after_days",
+  "auto_termination",
+  "termination_after_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Company Logo"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "address_details",
+   "fieldtype": "Link",
+   "label": "Address Details",
+   "options": "Address"
+  },
+  {
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID"
+  },
+  {
+   "fieldname": "invoice_prefix",
+   "fieldtype": "Data",
+   "label": "Invoice Prefix"
+  },
+  {
+   "fieldname": "invoice_number_series",
+   "fieldtype": "Int",
+   "label": "Invoice Number Series",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "default_tax_template",
+   "fieldtype": "Data",
+   "label": "Default Tax Template"
+  },
+  {
+   "default": "0",
+   "fieldname": "late_fee_settings",
+   "fieldtype": "Check",
+   "label": "Late Fee Settings"
+  },
+  {
+   "depends_on": "eval:doc.late_fee_settings==1",
+   "fieldname": "late_fee_type",
+   "fieldtype": "Select",
+   "label": "Late Fee Type",
+   "mandatory_depends_on": "eval:doc.late_fee_settings==1",
+   "options": "\nPercentage\nFix Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_suspension",
+   "fieldtype": "Check",
+   "label": "Auto Suspension"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_termination",
+   "fieldtype": "Check",
+   "label": "Auto Termination"
+  },
+  {
+   "depends_on": "eval:doc.late_fee_type===\"Percentage\"",
+   "fieldname": "late_fee_after_days",
+   "fieldtype": "Int",
+   "label": "Late Fee After Days",
+   "mandatory_depends_on": "eval:doc.late_fee_type==\"Percentage\"",
+   "non_negative": 1
+  },
+  {
+   "depends_on": "eval:doc.auto_suspension==1",
+   "fieldname": "suspension_after_days",
+   "fieldtype": "Int",
+   "label": "Suspension After Days",
+   "mandatory_depends_on": "eval:doc.auto_suspension==1",
+   "non_negative": 1
+  },
+  {
+   "depends_on": "eval:doc.auto_termination==1",
+   "fieldname": "termination_after_days",
+   "fieldtype": "Int",
+   "label": "Termination After Days",
+   "mandatory_depends_on": "eval:doc.auto_termination==1",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_nxtm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.late_fee_type===\"Fix Amount\"",
+   "fieldname": "late_fee_amount",
+   "fieldtype": "Currency",
+   "label": "Late Fee Amount",
+   "mandatory_depends_on": "eval:doc.late_fee_type==\"Fix Amount\"",
+   "non_negative": 1,
+   "options": "Currency"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-02-11 22:49:18.683711",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Company Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

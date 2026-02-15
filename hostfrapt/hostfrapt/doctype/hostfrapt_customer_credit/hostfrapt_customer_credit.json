@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-10 12:12:24.575851",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "section_break_ffjs",
+  "available_credit",
+  "column_break_yoxr",
+  "currency",
+  "section_break_guyg",
+  "credit_transactions"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "User"
+  },
+  {
+   "fieldname": "available_credit",
+   "fieldtype": "Currency",
+   "label": "Available Credit",
+   "non_negative": 1,
+   "options": "Currency"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_break_guyg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "credit_transactions",
+   "fieldtype": "Table",
+   "label": "Credit Transactions",
+   "options": "Hostfrapt Credit Transaction"
+  },
+  {
+   "fieldname": "section_break_ffjs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_yoxr",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-10 12:21:47.447499",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Customer Credit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

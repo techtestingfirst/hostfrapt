@@ -1,124 +1,120 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "autoincrement",
  "creation": "2025-12-29 21:26:12.872450",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "enabled",
-  "server_allocation",
-  "column_break_tpqo",
-  "hidden",
-  "section_break_kczf",
+  "product_name",
+  "allocation_server",
+  "column_break_lfql",
   "product_type",
-  "activation",
-  "hosting_plan",
-  "column_break_gqkc",
-  "title",
-  "route",
-  "section_break_cvqg",
-  "enable_stock",
+  "section_break_cqfp",
+  "server_manager_type",
+  "resource_limits",
+  "column_break_pyie",
+  "stock_control",
   "quantity_in_stock",
-  "column_break_rsgl"
+  "auto_setup",
+  "section_break_hdwv",
+  "pricing_table",
+  "section_break_qlbb",
+  "description"
  ],
  "fields": [
   {
+   "description": "Starter Hosting, Business VPS, etc.",
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Name",
+   "reqd": 1
+  },
+  {
    "fieldname": "product_type",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Product Type",
-   "options": "Hosting\nDomain\nLicense\nDownloadable",
+   "options": "\nShared Hosting\nVPS\nDedicated\nCloud\nDomain\nSSL\nAddon",
    "reqd": 1
   },
   {
-   "default": "0",
-   "fieldname": "enabled",
-   "fieldtype": "Check",
-   "label": "Enabled"
-  },
-  {
-   "fieldname": "activation",
-   "fieldtype": "Select",
-   "label": "Activation",
-   "options": "After order is placed\nAfter payment is received\nManual activation"
-  },
-  {
-   "fieldname": "column_break_gqkc",
+   "fieldname": "column_break_lfql",
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "hidden",
-   "fieldtype": "Check",
-   "label": "Hidden"
-  },
-  {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "label": "Title",
-   "reqd": 1
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "Route"
-  },
-  {
-   "fieldname": "section_break_cvqg",
-   "fieldtype": "Section Break",
-   "label": "Stock Control"
-  },
-  {
-   "default": "0",
-   "fieldname": "enable_stock",
-   "fieldtype": "Check",
-   "label": "Enable Stock"
-  },
-  {
-   "fieldname": "column_break_rsgl",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:doc.enable_stock == 1",
-   "fieldname": "quantity_in_stock",
-   "fieldtype": "Int",
-   "label": "Quantity In Stock",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "hosting_plan",
-   "fieldtype": "Link",
-   "label": "Hosting Plan",
-   "options": "Hostfrapt Hosting Plan",
-   "reqd": 1
-  },
-  {
-   "fieldname": "section_break_kczf",
+   "fieldname": "section_break_qlbb",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_tpqo",
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_cqfp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "allocation_server.server_manager",
+   "fieldname": "server_manager_type",
+   "fieldtype": "Read Only",
+   "label": "Server Manager Type"
+  },
+  {
+   "default": "0",
+   "description": "for limited resources like dedicated servers",
+   "fieldname": "stock_control",
+   "fieldtype": "Check",
+   "label": "Stock Control"
+  },
+  {
+   "depends_on": "eval: doc.stock_control==1",
+   "fieldname": "column_break_pyie",
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval: doc.enabled == 1",
-   "fieldname": "server_allocation",
+   "depends_on": "eval: doc.stock_control==1",
+   "fieldname": "quantity_in_stock",
+   "fieldtype": "Int",
+   "label": "Quantity in Stock",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "section_break_hdwv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pricing_table",
+   "fieldtype": "Table",
+   "label": "Pricing Table",
+   "options": "Hostfrapt Pricing Table"
+  },
+  {
+   "fieldname": "resource_limits",
    "fieldtype": "Link",
-   "label": "Server Allocation",
-   "mandatory_depends_on": "eval: doc.enabled == 1",
+   "label": "Resource Limits",
+   "options": "Hostfrapt Hosting Plan"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_setup",
+   "fieldtype": "Check",
+   "label": "Auto Setup"
+  },
+  {
+   "fieldname": "allocation_server",
+   "fieldtype": "Link",
+   "label": "Allocation Server",
    "options": "Hostfrapt Server"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-25 22:28:01.092538",
+ "modified": "2026-02-15 11:06:32.980807",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Product",
- "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -136,10 +132,10 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "search_fields": "title,hosting_plan",
+ "search_fields": "product_name",
  "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "title"
+ "title_field": "product_name"
 }

@@ -13,12 +13,18 @@ class HostfraptHostingPlan(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
-		from hostfrapt.hostfrapt.doctype.hostfrapt_billing_plan_detail.hostfrapt_billing_plan_detail import HostfraptBillingPlanDetail
 
-		billing_plan: DF.Table[HostfraptBillingPlanDetail]
-		name: DF.Int | None
-		plan_discription: DF.TextEditor | None
+		bandwidth_quota: DF.Float
+		disk_quota: DF.Float
+		ftp_accounts: DF.Int
+		max_addon_domains: DF.Int
+		max_databases: DF.Int
+		max_email_accounts: DF.Int
+		max_parked_domains: DF.Int
+		max_subdomains: DF.Int
 		plan_name: DF.Data
+		server_manager: DF.Literal["", "cPanel", "DirectAdmin", "Proxmox", "Custom"]
+		ssh_access: DF.Check
 	# end: auto-generated types
 
 	pass

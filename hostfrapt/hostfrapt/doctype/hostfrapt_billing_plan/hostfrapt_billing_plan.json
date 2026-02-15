@@ -16,7 +16,8 @@
   "term_period",
   "trial_period",
   "column_break_flii",
-  "price"
+  "price",
+  "setup_fee"
  ],
  "fields": [
   {
@@ -73,7 +74,7 @@
    "fieldtype": "Link",
    "label": "Term Period",
    "mandatory_depends_on": "eval:doc.billing_type == \"Recurring\"",
-   "options": "Hostfrapt Term Period"
+   "options": "Hostfrapt Billing Cycle"
   },
   {
    "fieldname": "billing_type",
@@ -90,12 +91,20 @@
    "label": "Trial Period",
    "mandatory_depends_on": "eval:doc.billing_type == \"Trial\"",
    "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "setup_fee",
+   "fieldtype": "Currency",
+   "label": "Setup Fee",
+   "non_negative": 1,
+   "options": "Currency"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-25 21:30:21.333030",
+ "modified": "2026-02-11 21:03:08.564481",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
  "name": "Hostfrapt Billing Plan",

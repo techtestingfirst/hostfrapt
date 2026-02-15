@@ -36,7 +36,7 @@
  "modified": "2026-01-25 21:46:49.314294",
  "modified_by": "Administrator",
  "module": "Hostfrapt",
- "name": "Hostfrapt Term Period",
+ "name": "Hostfrapt Billing Cycle",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

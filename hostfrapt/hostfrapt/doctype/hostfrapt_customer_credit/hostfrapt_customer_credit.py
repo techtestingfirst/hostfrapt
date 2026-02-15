@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class HostfraptBillingPlan(Document):
+class HostfraptCustomerCredit(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -13,16 +13,12 @@ class HostfraptBillingPlan(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+		from hostfrapt.hostfrapt.doctype.hostfrapt_credit_transaction.hostfrapt_credit_transaction import HostfraptCreditTransaction
 
-		billing_type: DF.Literal["", "Free", "Trial", "One Time", "Recurring"]
+		available_credit: DF.Currency
+		credit_transactions: DF.Table[HostfraptCreditTransaction]
 		currency: DF.Link | None
-		enabled: DF.Check
-		name: DF.Int | None
-		price: DF.Currency
-		setup_fee: DF.Currency
-		term_period: DF.Link | None
-		title: DF.Data
-		trial_period: DF.Int
+		customer: DF.Link | None
 	# end: auto-generated types
 
 	pass

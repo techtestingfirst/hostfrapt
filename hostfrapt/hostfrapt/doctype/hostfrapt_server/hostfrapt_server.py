@@ -16,9 +16,13 @@ class HostfraptServer(Document):
 
 		assigned_ip_addresses: DF.Data | None
 		connection_port: DF.Data
+		currency: DF.Link | None
+		current_accounts_count: DF.Int
 		hostname: DF.Data
 		ip: DF.Data
 		is_enabled: DF.Check
+		max_accounts: DF.Int
+		monthly_cost: DF.Currency
 		name: DF.Int | None
 		name_server_1: DF.Data
 		name_server_2: DF.Data
@@ -27,8 +31,8 @@ class HostfraptServer(Document):
 		password_length: DF.Int
 		password_or_login_key: DF.Data
 		server_location: DF.Link | None
+		server_manager: DF.Literal["", "Direct Admin", "C Panel", "Plesk", "CWP", "Proxmox", "Custom"]
 		server_name: DF.Data
-		server_panel: DF.Literal["", "Direct Admin", "C Panel", "Plesk", "CWP"]
 		server_provider: DF.Data | None
 		use_secure_connection: DF.Check
 		username: DF.Data

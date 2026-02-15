@@ -6,8 +6,14 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const LucideAlarmClockCheck: typeof import('~icons/lucide/alarm-clock-check')['default']
+  const LucideBriefcase: typeof import('~icons/lucide/briefcase')['default']
+  const LucideCalendar: typeof import('~icons/lucide/calendar')['default']
+  const LucideCheckCircle: typeof import('~icons/lucide/check-circle')['default']
   const LucideGithub: typeof import('~icons/lucide/github')['default']
+  const LucideIndianRupee: typeof import('~icons/lucide/indian-rupee')['default']
   const LucideLinkedin: typeof import('~icons/lucide/linkedin')['default']
   const LucideTwitter: typeof import('~icons/lucide/twitter')['default']
+  const LucideUser: typeof import('~icons/lucide/user')['default']
   const LucideUsers: typeof import('~icons/lucide/users')['default']
 }

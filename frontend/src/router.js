@@ -23,6 +23,11 @@ const routes = [
 		name: "Invoice",
 		component: () => import("@/pages/Invoice.vue"),
 	},
+	{
+		path: "/order",
+		name: "Order",
+		component: () => import("@/pages/Order.vue"),
+	},
 	// {
 	// 	name: "Login",
 	// 	path: "/account/login",

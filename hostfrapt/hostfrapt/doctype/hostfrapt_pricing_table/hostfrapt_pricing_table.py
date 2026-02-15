@@ -1,11 +1,11 @@
 # Copyright (c) 2026, Praveen Kumar and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
-class HostfraptUser(Document):
+class HostfraptPricingTable(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,14 +14,15 @@ class HostfraptUser(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		address_title: DF.Link | None
-		company_name: DF.Data | None
-		first_name: DF.ReadOnly | None
-		last_name: DF.ReadOnly | None
-		middle_name: DF.ReadOnly | None
-		salutaion: DF.Link
-		user: DF.Link | None
-		user_image: DF.AttachImage | None
+		billing_cycle: DF.Data | None
+		billing_plan: DF.Link
+		currency: DF.Link
+		parent: DF.Data
+		parentfield: DF.Data
+		parenttype: DF.Data
+		price: DF.Currency
+		setup_fee: DF.Currency
+		total: DF.ReadOnly | None
 	# end: auto-generated types
 
 	pass

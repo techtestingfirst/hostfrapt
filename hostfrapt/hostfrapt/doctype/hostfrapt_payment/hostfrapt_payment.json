@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-10 11:55:51.133587",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_number",
+  "gateway",
+  "customer",
+  "payment_date",
+  "amount_paid",
+  "column_break_rnqx",
+  "payment_method",
+  "transaction_id",
+  "transaction_status",
+  "currency",
+  "section_break_jhdd",
+  "applied_to_invoices",
+  "section_break_kxgg",
+  "payment_balance",
+  "column_break_fwto",
+  "receipt",
+  "section_break_aqsz",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_number",
+   "fieldtype": "Data",
+   "label": "Payment Number"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "User"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid",
+   "non_negative": 1,
+   "options": "Currency"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "\nCash\nUPI\nCredit Card\nBank Transfer\nCredits"
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "label": "Transaction ID"
+  },
+  {
+   "fieldname": "transaction_status",
+   "fieldtype": "Select",
+   "label": "Transaction Status",
+   "options": "Success\nPending\nFailed"
+  },
+  {
+   "fieldname": "gateway",
+   "fieldtype": "Select",
+   "label": "Gateway",
+   "options": "\nStripe\nRazorpay\nPayPal"
+  },
+  {
+   "fieldname": "column_break_rnqx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jhdd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "applied_to_invoices",
+   "fieldtype": "Table",
+   "label": "Applied To Invoices",
+   "options": "Hostfrapt Applied To Invoice"
+  },
+  {
+   "fieldname": "section_break_kxgg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_balance",
+   "fieldtype": "Currency",
+   "label": "Payment Balance",
+   "options": "Currency"
+  },
+  {
+   "description": "(PDF)",
+   "fieldname": "receipt",
+   "fieldtype": "Data",
+   "label": "Receipt"
+  },
+  {
+   "fieldname": "column_break_fwto",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_aqsz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-15 15:53:41.109323",
+ "modified_by": "Administrator",
+ "module": "Hostfrapt",
+ "name": "Hostfrapt Payment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
